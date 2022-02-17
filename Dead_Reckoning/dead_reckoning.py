@@ -1,7 +1,7 @@
 import numpy as np;
 
 
-def accelToVel(acc: dict):
+def accelToVel(acc: dict, angle: dict):
 
     return;
 
