@@ -16,9 +16,14 @@ const int MEMORY_SIZE = 3;
 
 ActiveStatus::ActiveStatus(double startX, double startY, double startZ, double plusMinus){
     /*Initialize the 3 arrays*/    
-    static double xMem[MEMORY_SIZE] = {0};
-    static double yMem[MEMORY_SIZE] = {0};
-    static double zMem[MEMORY_SIZE] = {0};
+    static double xMem[MEMORY_SIZE] = {};
+    static double yMem[MEMORY_SIZE] = {};
+    static double zMem[MEMORY_SIZE] = {};
+    for(int i=0; i < MEMORY_SIZE; i++){
+        xMem[i] = startX;
+        yMem[i] = startY;
+        zMem[i] = startZ;
+    }
     this->memoryXPtr = xMem;
     this->memoryYPtr = yMem;
     this->memoryZPtr = zMem;
@@ -99,6 +104,7 @@ double* ActiveStatus::getArrX(){
 }
 
 
+/* COMMENT THIS OUT WHEN YOU USE WITH ARDUINO CODE*/
 int main(){
     ActiveStatus status(0, 0, 0, 0.4);
     short int stat = status.updateStatus(1,1,1);
