@@ -163,4 +163,6 @@ void loop() {
   // empty
   writeFile();
   delay(500);
+  readFile();
+  delay(500);
 }
